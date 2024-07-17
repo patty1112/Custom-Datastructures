@@ -1,0 +1,21 @@
+Printing the away team in position order.
+     (Pitcher) Player 6:  ArmStrength-97   Speed-54    Agiliy-70   GroundFielding-74    FlyBallFielding-47    Stamina-97    Hitting-54 
+     (Catcher) Player 3:  ArmStrength-50   Speed-93    Agiliy-33   GroundFielding-28    FlyBallFielding-73    Stamina-95    Hitting-61 
+    (1st Base) Player 7:  ArmStrength-40   Speed-52    Agiliy-40   GroundFielding-47    FlyBallFielding-25    Stamina-34    Hitting-96 
+    (2nd Base) Player 1:  ArmStrength-20   Speed-86    Agiliy-74   GroundFielding-97    FlyBallFielding-29    Stamina-79    Hitting-34 
+    (3rd Base) Player 2:  ArmStrength-83   Speed-87    Agiliy-78   GroundFielding-85    FlyBallFielding-77    Stamina-48    Hitting-42 
+  (Short Stop) Player 9:  ArmStrength-53   Speed-67    Agiliy-93   GroundFielding-58    FlyBallFielding-49    Stamina-39    Hitting-85 
+  (Left Field) Player 5:  ArmStrength-84   Speed-11    Agiliy-45   GroundFielding-93    FlyBallFielding-91    Stamina-36    Hitting-39 
+(Center Field) Player 4:  ArmStrength-31   Speed-94    Agiliy-67   GroundFielding-32    FlyBallFielding-29    Stamina-44    Hitting-43 
+ (Right Field) Player 8:  ArmStrength-56   Speed-71    Agiliy-26   GroundFielding-54    FlyBallFielding-91    Stamina-19    Hitting-16 
+
+Printing the home team in position order.
+     (Pitcher) Player 4:  ArmStrength-95   Speed-92    Agiliy-76   GroundFielding-60    FlyBallFielding-52    Stamina-47    Hitting-44 
+     (Catcher) Player 1:  ArmStrength-16   Speed-12    Agiliy-68   GroundFielding-73    FlyBallFielding-47    Stamina-39    Hitting-96 
+    (1st Base) Player 5:  ArmStrength-52   Speed-26    Agiliy-43   GroundFielding-90    FlyBallFielding-22    Stamina-12    Hitting-33 
+    (2nd Base) Player 2:  ArmStrength-69   Speed-90    Agiliy-40   GroundFielding-98    FlyBallFielding-18    Stamina-41    Hitting-27 
+    (3rd Base) Player 9:  ArmStrength-89   Speed-10    Agiliy-79   GroundFielding-97    FlyBallFielding-20    Stamina-83    Hitting-92 
+  (Short Stop) Player 8:  ArmStrength-54   Speed-81    Agiliy-79   GroundFielding-11    FlyBallFielding-33    Stamina-95    Hitting-75 
+  (Left Field) Player 7:  ArmStrength-61   Speed-40    Agiliy-28   GroundFielding-73    FlyBallFielding-83    Stamina-68    Hitting-21 
+(Center Field) Player 6:  ArmStrength-79   Speed-93    Agiliy-65   GroundFielding-84    FlyBallFielding-75    Stamina-94    Hitting-68 
+ (Right Field) Player 3:  ArmStrength-36   Speed-13    Agiliy-39   GroundFielding-12    FlyBallFielding-54    Stamina-80    Hitting-53 

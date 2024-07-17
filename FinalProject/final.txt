@@ -1,0 +1,82 @@
+Title: Patrick Maes, Section E- Armando Ocampo, Baseball Game Simulation
+
+Project Description: I created a program that takes two teams of players and sorts them
+into appropriate positions. The program also runs a randomized simulation of 9 innings
+to decide the winner between the two teams. The user can choose to use completely random
+teams, or enter a player with stats of their choosing. The player will be placed in the
+position that best fits their stats and the game will also be simulated in this case.
+Game simulations are semi-random, using dice rolls to decide the outcomes of matchups.
+However, the stats of the pitcher and hitter are also taken into account when deciding 
+outcomes. To do this, I used the formula hitProbability = hitterStat/(2 * pitcherStat).
+While not completely reflective of game complexities, this probability changes the chances
+of each outcome based on the matchup. Since the games are random and the fieldStats are not 
+taken into account as much, the winner will not always be the team with the best 
+fieldPositions and players.
+
+Procedural Description: 
+//If the user chooses 1 for two fully random teams,
+//Add 9 players with random stats to 2 doubly linked lists (in main.cpp)
+//Create a Team out of the two linked lists
+//Assign the positions of the Team class to the positions in the Field class  (assignPositions() in Team.cpp)
+    //NOTE: Player positions are dependant on 1 stat only in this order:
+    //Pitcher - ArmStrength, LeftField - flyRating, ShortStop - Agiliy, CenterField - RawSpeed,
+    //ThirdBase - ArmStrength, SecondBase - GroundFielding, RightField - FlyRating, 
+    //FirstBase - GroundFielding, Catcher - lastAssigned Player  
+//Game is then played after both teams are lastAssigned
+//Similation was implemented using counters for innings, outs, runsScored, and teamScores
+//Bases were also represented using a doubly linked list of ints size 4,
+//The value of the nodes represents the number of players on that base. (Always <= 1)
+//The bases are printed after most outcomes to help track the game,
+//Bases are printed in form 0 0 0 0, where the last value is home (Always = 0), first is 1B
+//When there are 3 outs, switch batting and fielding team. Then play the half inning again
+//After 9 innings, print the winner or if the teams tied.
+
+//If the user chooses 2 for entering their own player
+//Enter the name and stats of the player through the terminal
+//Add 8 more players to the away team, and randomize the home team
+//Simulate the game exactly the same as before.
+
+Data Structure: 
+I chose to use a doublyLinkedList as my dataStructure for holding players and
+creating the bases. I was not sorting the list and only searching a handful of times, 
+so the complexity of iterating through was not too important, especially since the list
+size was no more than 9. The bases needed to be a doubly linked list since the players should move
+to the next base as appropriate. If more edge cases were included like hits to the outfield,
+players might need to move backwards bases, but not in my implementation.
+
+Tests:
+Inputs for the program are checked for viability, done by reading them in as strings
+and checking length and if the character is a digit. 
+1. Any player with the highest ArmStrength will be assined as the pitcher, entering 99
+or another high stat should assign your player as the pitcher.
+2. Any player with the highest flyRating will be assigned as the leftFielder, since it 
+is very active during actual games. A 99 flyStat should be assigned as leftField if another
+player has a larger ArmStrength. If your player also has a 99 ArmStrength, it will become
+the pitcher instead. 
+3. Simmilarly, a player with 99 agility will become the ShortStop if other players have
+larger ArmStrength and flyRating. ShortStop is the third position to be assigned, after
+pitcher and leftField.
+4. A player with a 99 RawSpeed stat will be assigned to CenterField since there is the
+most ground to cover there. However, other players must have higher ArmStrength, flyRating,
+and Agiliy.
+5. A player with 99 GroundFielding will be placed in secondBase if other players have higher 
+stats. This is the last stat that players are assinged by, with the catcher becoming the
+player who was the least specialized.
+   
+    NOTE: The simulation can not really be tested for accuracy without seeding the random
+number generator. I have followed the print statements to ensure counters are tracking and
+players move the appropriate number of bases. If player hits a single, all players move 
+1 base. If double, all players move 2 bases. If triple, all players move 3 bases.
+If player walks or is hit, push runners forward only if first base is occupied.
+If there is a field out, do NOT move players (for sake of simplicity).
+
+Reflection: Overall, I learned how to integrate lots of classes together and making
+object data members change the chances of specific outcomes. Also, I learned how
+to integrate source files together and resolve linker errors. Originally I used one
+source file with multiple dependancies, and all my classes were .hpp files. Splitting 
+them created duplicate symbols which are sometimes hard to resolve. To resolve them, I
+created the baseStatus class that inherited the protected and public members of
+DoublyLinkedList. Then I was able to use the same functions as implemented in 
+DoublyLinkedList, but with the specific data type (ints) and the size 4. This project
+helped me understand the usefulness of inheritance and object oriented programming,
+especially when implementations are already made.
